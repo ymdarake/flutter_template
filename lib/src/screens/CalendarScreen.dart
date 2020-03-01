@@ -50,7 +50,6 @@ class _CalendarScreenState extends State<CalendarScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 12.0),

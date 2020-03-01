@@ -39,9 +39,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               iconAnimationController.reverse();
             }
           },
-          child: AnimatedIcon(
-            progress: iconAnimation,
-            icon: AnimatedIcons.menu_close,
+          child: Center(
+            child: AnimatedIcon(
+              progress: iconAnimation,
+              icon: AnimatedIcons.menu_close,
+            ),
           ),
         ),
       ),
