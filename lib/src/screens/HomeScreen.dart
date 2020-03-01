@@ -21,13 +21,28 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   }
 
   @override
+  void dispose() {
+    iconAnimationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter Template"),
-        leading: AnimatedIcon(
-          progress: iconAnimation,
-          icon: AnimatedIcons.menu_close,
+        leading: GestureDetector(
+          onTap: () {
+            if (iconAnimationController.status == AnimationStatus.dismissed) {
+              iconAnimationController.forward();
+            } else if (iconAnimationController.status == AnimationStatus.completed) {
+              iconAnimationController.reverse();
+            }
+          },
+          child: AnimatedIcon(
+            progress: iconAnimation,
+            icon: AnimatedIcons.menu_close,
+          ),
         ),
       ),
       body: Container(
