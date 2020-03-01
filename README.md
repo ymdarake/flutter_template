@@ -6,5 +6,9 @@ Flutter starter template including:
  - Widgets:
    - **`CircleButton`**
    - BottomNavigationBar with page-switching management.
+ - Route Transitions:
+   - **`FadeTransition`**
+   - **`SlideLeftTransition`**
+   - **`SlideUpTransition`**
 - Others:
   - Ideas to implement routes.
