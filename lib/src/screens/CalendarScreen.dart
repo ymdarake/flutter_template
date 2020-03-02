@@ -246,8 +246,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
   void _scrollToToday() {
     DateTime now = DateTime.now();
-    // NOTE: If `oldest` is too old, monthDiff will possibly incorrect.
-    int monthDiff = (oldest.difference(now).inDays / 30).ceil().abs();
+    int monthDiff = (now.year - oldest.year) == 0
+        ? now.month - oldest.month
+        : (now.year * 12 + now.month) - (oldest.year * 12 + oldest.month);
     int distance = ((_calendarHeight * monthDiff) - scrollController.offset).floor().abs();
 
     // NOTE: If distance is less than 20 months, then scroll back smoothly.
