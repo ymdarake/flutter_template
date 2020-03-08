@@ -10,7 +10,8 @@ Flutter starter template including:
    - **`FadeTransition`**
    - **`SlideLeftTransition`**
    - **`SlideUpTransition`**
- - Dark Mode
-   - with `Provider`, `ChangeNotifier`, `Consumer`.
+ - Color Theme
+   - **`Dark Theme`** with `Provider`, `ChangeNotifier`, `Consumer`.
+   - **`Custom Swatch`**
 - Others:
   - Ideas to implement routes.
