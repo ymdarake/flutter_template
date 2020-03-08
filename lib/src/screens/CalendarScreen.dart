@@ -48,7 +48,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         actions: <Widget>[
           Padding(
@@ -83,7 +83,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   }
 
   Widget _buildCalendar(BuildContext context) {
-    TextStyle style = TextStyle(color: Theme.of(context).canvasColor, fontSize: 12);
+    TextStyle style = TextStyle(color: Colors.white, fontSize: 12);
     return Column(
       children: <Widget>[
         Row(
@@ -130,7 +130,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
             child: Text(
               DateFormat.yMMM(locale).format(date),
               style: TextStyle(
-                color: Theme.of(context).canvasColor,
+                color: Colors.white,
               ),
             ),
           ),
@@ -163,8 +163,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     elevation: 0,
                     text: '$day',
                     fontSize: 16,
-                    textColor: selected ? Theme.of(context).backgroundColor : Theme.of(context).canvasColor,
-                    backgroundColor: selected ? Theme.of(context).canvasColor : Theme.of(context).backgroundColor,
+                    textColor: selected ? Theme.of(context).primaryColor : Colors.white,
+                    backgroundColor: selected ? Colors.white : Theme.of(context).primaryColor,
                   ),
                 );
               }),

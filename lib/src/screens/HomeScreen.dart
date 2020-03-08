@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_template/src/change_notifiers/ThemeModeNotifier.dart';
 import 'package:flutter_template/src/widgets/AppBottomNavigationBar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -28,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
+    ThemeModeNotifier notifier = Provider.of<ThemeModeNotifier>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter Template"),
@@ -51,7 +54,16 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         constraints: BoxConstraints.expand(),
         color: Theme.of(context).backgroundColor,
         child: Center(
-          child: Text("I hope this will help! :)"),
+          child: Column(
+            children: <Widget>[
+              Text("I hope this will help! :)"),
+              Text("Toggle to Dark Mode!"),
+              Switch(
+                value: notifier.mode == ThemeMode.dark,
+                onChanged: (value) => notifier.toggle(),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: AppBottomNavigationBar(),
