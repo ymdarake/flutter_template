@@ -11,24 +11,21 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 62.0,
-      child: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex,
-        onTap: ((index) {
-          if (index != currentIndex) {
-            currentIndex = index;
-            Navigator.pushReplacementNamed(context, ROUTES[index]);
-          }
-        }),
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.view_comfy), title: Text('')),
-          BottomNavigationBarItem(icon: Icon(Icons.calendar_today), title: Text('')),
-        ],
-      ),
+    return BottomNavigationBar(
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      type: BottomNavigationBarType.fixed,
+      currentIndex: currentIndex,
+      onTap: ((index) {
+        if (index != currentIndex) {
+          currentIndex = index;
+          Navigator.pushReplacementNamed(context, ROUTES[index]);
+        }
+      }),
+      items: [
+        BottomNavigationBarItem(icon: Icon(Icons.view_comfy), title: Text('')),
+        BottomNavigationBarItem(icon: Icon(Icons.calendar_today), title: Text('')),
+      ],
     );
   }
 }
